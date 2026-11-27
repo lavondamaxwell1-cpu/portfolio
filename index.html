@@ -121,6 +121,7 @@
   }
   .card-link svg{width:17px;height:17px}
   .card-link:hover{text-decoration:underline}
+  .card-links{display:flex;flex-wrap:wrap;gap:4px 24px}
   /* More projects */
   .more-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
   .more-list li{border-bottom:1px solid var(--line)}
@@ -225,7 +226,7 @@
   <section id="projects" class="alt" aria-labelledby="projects-h">
     <div class="wrap">
       <h2 id="projects-h">Featured projects</h2>
-      <p class="section-intro">Six projects that show the range — full-stack apps, payments, booking, and business sites. Each card links to the code on GitHub.</p>
+      <p class="section-intro">Seven projects that show the range — full-stack apps, payments, booking, and business sites. Where a project is live on the web, its card links straight to it; the rest link to the code on GitHub.</p>
       <div class="grid">
 
         <article class="card">
@@ -253,7 +254,10 @@
           <div class="card-head"><h3>Salon Booking App</h3><span class="num">04</span></div>
           <p>An appointment booking app for a salon, with email notifications so appointments are confirmed automatically.</p>
           <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Resend email</span></div>
-          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/salon-booking-app" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <div class="card-links">
+            <a class="card-link" href="https://salon-booking-app-pi-lake.vercel.app/" target="_blank" rel="noopener">Live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/salon-booking-app" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          </div>
         </article>
 
         <article class="card">
@@ -268,6 +272,13 @@
           <p>A chat and messaging web application — real-time style communication built in the browser.</p>
           <div class="tags"><span class="tag">JavaScript</span></div>
           <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/ChatApp" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h3>The QueensMen</h3><span class="num">07</span></div>
+          <p>Live website built for The QueensMen fashion business — a real client site, up and running on the web.</p>
+          <div class="tags"><span class="tag">Business website</span><span class="tag">Live client site</span></div>
+          <a class="card-link" href="https://www.thequeensmenfasion.com/" target="_blank" rel="noopener">Live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </article>
 
       </div>
