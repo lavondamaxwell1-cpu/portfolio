@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Portfolio of Lavonda Maxwell, full-stack web developer in Columbia, SC — websites and web apps for small businesses." />
+<link rel="icon" href="data:," />
+<title>Lavonda Maxwell — Web Development Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f3f4f1;
+    --surface:#ffffff;
+    --ink:#171a1e;
+    --ink-2:#3f4750;
+    --muted:#6b747e;
+    --line:#e2e5e0;
+    --accent:#0c6b5e;
+    --accent-ink:#ffffff;
+    --accent-soft:#e6f2ef;
+    --chip-bg:#eef0ec;
+    --chip-ink:#2f3a36;
+    --shadow:0 1px 2px rgba(20,25,22,.05),0 10px 30px rgba(20,25,22,.06);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121517;
+      --bg-soft:#171b1e;
+      --surface:#1a1f22;
+      --ink:#eef1ef;
+      --ink-2:#c6cdc9;
+      --muted:#9aa5a0;
+      --line:#2a3134;
+      --accent:#3ec9b2;
+      --accent-ink:#0b1513;
+      --accent-soft:#1d2f2b;
+      --chip-bg:#242b2e;
+      --chip-ink:#d6ddd9;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+  .hero-top{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .avatar{
+    width:56px;height:56px;border-radius:50%;flex:none;
+    background:var(--accent);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"DM Serif Display",Georgia,serif;font-size:22px;letter-spacing:.02em;
+  }
+  .hero-top .loc{font-size:15px;color:var(--muted);line-height:1.4}
+  .hero-top .loc strong{color:var(--ink-2);font-weight:600;display:block;font-size:16px}
+  h1{
+    font-family:"DM Serif Display",Georgia,serif;font-weight:400;
+    font-size:clamp(44px,8vw,72px);line-height:1.02;margin:0 0 14px;letter-spacing:-.01em;
+  }
+  .role{font-size:clamp(20px,3.4vw,26px);font-weight:600;color:var(--accent);margin:0 0 18px}
+  .lede{font-size:19px;color:var(--ink-2);max-width:640px;margin:0 0 30px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;
+    border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn svg{width:18px;height:18px;flex:none}
+  /* ---------- Sections ---------- */
+  section{padding:52px 0}
+  section.alt{background:var(--bg-soft)}
+  h2{
+    font-family:"DM Serif Display",Georgia,serif;font-weight:400;
+    font-size:clamp(30px,5vw,40px);line-height:1.1;margin:0 0 10px;
+  }
+  .section-intro{color:var(--muted);max-width:620px;margin:0 0 32px;font-size:17px}
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:40px}
+  .about-grid p{margin:0 0 16px;color:var(--ink-2)}
+  .about-grid p strong{color:var(--ink)}
+  .factbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);align-self:start}
+  .factbox h3{margin:0 0 14px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .factbox dl{margin:0;display:grid;gap:12px}
+  .factbox dt{font-size:13px;color:var(--muted);margin:0}
+  .factbox dd{margin:0;font-weight:600;font-size:16px}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .skill{
+    font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13.5px;
+    background:var(--chip-bg);color:var(--chip-ink);
+    padding:7px 12px;border-radius:999px;
+  }
+  /* Projects */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;box-shadow:var(--shadow);
+  }
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+  .num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted)}
+  .card h3{font-size:22px;margin:0;line-height:1.2;font-weight:700}
+  .card p{color:var(--ink-2);margin:0 0 18px;font-size:16px;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+  .tag{font-family:"JetBrains Mono",monospace;font-size:12.5px;background:var(--accent-soft);color:var(--accent);padding:5px 9px;border-radius:6px;font-weight:500}
+  @media (prefers-color-scheme: dark){ .tag{color:var(--accent)} }
+  .card-link{
+    display:inline-flex;align-items:center;gap:7px;font-weight:600;text-decoration:none;
+    min-height:44px;padding:8px 0;font-size:16px;
+  }
+  .card-link svg{width:17px;height:17px}
+  .card-link:hover{text-decoration:underline}
+  /* More projects */
+  .more-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .more-list li{border-bottom:1px solid var(--line)}
+  .more-list a{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px 4px;min-height:56px;text-decoration:none;color:var(--ink);
+  }
+  .more-list a:hover .more-name{color:var(--accent)}
+  .more-name{font-weight:600;font-size:17px}
+  .more-desc{color:var(--muted);font-size:15px;display:block;font-weight:400}
+  .more-arrow{color:var(--muted);flex:none;font-size:20px}
+  /* Contact */
+  .contact-box{
+    background:var(--accent);color:var(--accent-ink);border-radius:18px;
+    padding:40px 34px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;
+  }
+  .contact-box h2{color:var(--accent-ink);margin-bottom:8px}
+  .contact-box p{margin:0;opacity:.92;max-width:480px}
+  .contact-links{display:grid;gap:12px}
+  .contact-links a{
+    display:flex;align-items:center;gap:12px;min-height:52px;padding:12px 18px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    border-radius:10px;color:#fff;text-decoration:none;font-weight:600;font-size:16px;word-break:break-all;
+  }
+  @media (prefers-color-scheme: dark){
+    .contact-links a{background:rgba(0,0,0,.22);border-color:rgba(255,255,255,.2);color:#eafffa}
+    .contact-box p{color:#eafffa}
+  }
+  .contact-links svg{width:20px;height:20px;flex:none}
+  footer{padding:28px 0 40px;color:var(--muted);font-size:14.5px;text-align:center}
+  /* Responsive */
+  @media (max-width:760px){
+    .hero{padding:44px 0 40px}
+    section{padding:40px 0}
+    .about-grid{grid-template-columns:1fr;gap:24px}
+    .grid{grid-template-columns:1fr}
+    .contact-box{grid-template-columns:1fr;padding:30px 24px}
+    body{font-size:16.5px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="avatar" aria-hidden="true">LM</div>
+      <div class="loc"><strong>Columbia, South Carolina</strong>Available for freelance web projects</div>
+    </div>
+    <h1>Lavonda Maxwell</h1>
+    <p class="role">Full-Stack Web Developer</p>
+    <p class="lede">I build websites and web apps for small businesses — booking systems, online stores, and business sites that are fast, clear, and easy for customers to use.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View my projects</a>
+      <a class="btn btn-ghost" href="https://github.com/lavondamaxwell1-cpu" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub profile
+      </a>
+      <a class="btn btn-ghost" href="mailto:lavondamaxwell1@gmail.com">Email me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- About -->
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 id="about-h">About</h2>
+      <p class="section-intro">Trained as a full-stack developer, now building for real clients.</p>
+      <div class="about-grid">
+        <div>
+          <p>I earned my <strong>Full-Stack Web Development certificate through Persevere in November 2024</strong>, where I trained in building complete web applications — from the page a customer sees to the server and database behind it.</p>
+          <p>Since then I&rsquo;ve kept building: a full-stack book app, an online store with secure logins and Stripe payments, a salon booking app, and business websites. I take on <strong>websites and web apps for small businesses as side work</strong>, alongside my day job.</p>
+          <p>My approach is simple: understand what the business actually needs, build it cleanly, and make sure it works well on a phone — because that&rsquo;s where most customers will find it.</p>
+          <div class="skills" aria-label="Skills">
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Next.js</span>
+            <span class="skill">Bootstrap</span>
+            <span class="skill">Tailwind CSS</span>
+            <span class="skill">Express</span>
+            <span class="skill">MongoDB</span>
+          </div>
+        </div>
+        <aside class="factbox" aria-label="At a glance">
+          <h3>At a glance</h3>
+          <dl>
+            <div><dt>Based in</dt><dd>Columbia, SC</dd></div>
+            <div><dt>Training</dt><dd>Full-Stack Web Development — Persevere, Nov 2024</dd></div>
+            <div><dt>Focus</dt><dd>Small-business websites &amp; web apps</dd></div>
+            <div><dt>Code</dt><dd>11 public projects on GitHub</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured projects -->
+  <section id="projects" class="alt" aria-labelledby="projects-h">
+    <div class="wrap">
+      <h2 id="projects-h">Featured projects</h2>
+      <p class="section-intro">Six projects that show the range — full-stack apps, payments, booking, and business sites. Each card links to the code on GitHub.</p>
+      <div class="grid">
+
+        <article class="card">
+          <div class="card-head"><h3>BookFlow</h3><span class="num">01</span></div>
+          <p>A full-stack book app with its own server and API — the front end and back end built to work together as one complete application.</p>
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Full-stack</span><span class="tag">API / Server</span></div>
+          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/bookflow-fullstack" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h3>Store App</h3><span class="num">02</span></div>
+          <p>An online store with a full back end: user accounts with secure login, product image uploads, and Stripe payments at checkout.</p>
+          <div class="tags"><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Stripe</span><span class="tag">JWT</span></div>
+          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/Store-App" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h3>AI Study Assistant</h3><span class="num">03</span></div>
+          <p>A study assistant web app built with Next.js and TypeScript — my most recent project, using a modern React framework with type-safe code.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span></div>
+          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/ai-study-assistant" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h3>Salon Booking App</h3><span class="num">04</span></div>
+          <p>An appointment booking app for a salon, with email notifications so appointments are confirmed automatically.</p>
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Resend email</span></div>
+          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/salon-booking-app" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h3>Carwash Site</h3><span class="num">05</span></div>
+          <p>A business website for a car wash, built with React and Tailwind CSS, with a working contact form for customers.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span></div>
+          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/carwash-site" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+        <article class="card">
+          <div class="card-head"><h3>ChatApp</h3><span class="num">06</span></div>
+          <p>A chat and messaging web application — real-time style communication built in the browser.</p>
+          <div class="tags"><span class="tag">JavaScript</span></div>
+          <a class="card-link" href="https://github.com/lavondamaxwell1-cpu/ChatApp" target="_blank" rel="noopener">View code on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- More projects -->
+  <section aria-labelledby="more-h">
+    <div class="wrap">
+      <h2 id="more-h">More projects</h2>
+      <p class="section-intro">Everything else is public on GitHub too — tap any project to see its code.</p>
+      <ul class="more-list">
+        <li><a href="https://github.com/lavondamaxwell1-cpu/Habit_Tracker" target="_blank" rel="noopener"><span><span class="more-name">Habit Tracker</span><span class="more-desc">Track daily habits and build streaks</span></span><span class="more-arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="https://github.com/lavondamaxwell1-cpu/ResturantApp" target="_blank" rel="noopener"><span><span class="more-name">Restaurant App</span><span class="more-desc">A web app for a restaurant</span></span><span class="more-arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="https://github.com/lavondamaxwell1-cpu/modeling-business-app" target="_blank" rel="noopener"><span><span class="more-name">Modeling Business App</span><span class="more-desc">A business app for a modeling business</span></span><span class="more-arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="https://github.com/lavondamaxwell1-cpu/bookflow" target="_blank" rel="noopener"><span><span class="more-name">BookFlow — front end</span><span class="more-desc">The client side of the BookFlow app</span></span><span class="more-arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="https://github.com/lavondamaxwell1-cpu/bookflow-server" target="_blank" rel="noopener"><span><span class="more-name">BookFlow — server</span><span class="more-desc">The server and API behind BookFlow</span></span><span class="more-arrow" aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section style="padding-top:0" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2 id="contact-h">Let&rsquo;s build something</h2>
+          <p>Need a website or web app for your business — a booking page, an online store, or a site that works properly on phones? Send me an email and tell me what you have in mind.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:lavondamaxwell1@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            lavondamaxwell1@gmail.com
+          </a>
+          <a href="https://github.com/lavondamaxwell1-cpu" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            github.com/lavondamaxwell1-cpu
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Lavonda Maxwell · Columbia, SC · Portfolio built by hand with HTML &amp; CSS</div>
+</footer>
+
+</body>
+</html>
